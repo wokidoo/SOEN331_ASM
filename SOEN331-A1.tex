@@ -16,7 +16,7 @@
 \title{SOEN 331 (U):Formal Methods\\for Software Engineering\\
 \ \\
 Assignment 1}
-\author{Charles Partous, Name}
+\author{Charles Partous (40175854), Mark Ghaby ()}
 \date{March 7, 2024}
 \begin{spacing}{1.5}
 \begin{document}
@@ -25,591 +25,303 @@ Assignment 1}
 
 
 \newpage
+\section*{Problem 1: Propositional logic}
 
-\begin{enumerate}
+\begin{tabbing}
+P: card is blue \\
+Q: card is prime \\
+P $\rightarrow$ Q \\
 
-\item Here is some code in Prolog:
+Card 1: Number 9, Card 2: Number 11, Card 3: Blue , Card 4: Yellow\\\\
 
-\begin{verbatim}
-member(X, [X|_]).
-member(X, [_|T]) :- member(X, T).
-\end{verbatim}
+Card1:\\ To demonstrate modus tollens, flip the card to  prove that a card with a prime number is not blue.\\\\
 
+Card2: \\No need to flip this card. \\No conclusion can be drawn from the outcome because a prime number doesn’t imply that\\ a card must be blue.\\\\
 
-\item LTL formulas:
+Card3: \\To demonstrate modus ponens, flip this card to prove that blue cards have a prime number.\\\\
 
-\begin{enumerate}
-	
-	\item $\Box \phi \rightarrow \Diamond \psi $
-	
-	\noindent If $\phi$ is an invariant, then $\psi$ becomes true eventually.
-	
-	\item $\Box \phi \rightarrow \bigcirc \Box \Diamond \psi$
-	
-	\noindent If $\phi$ is an invariant, the $\psi$ will be true infinitely often, starting 	
-	from the next moment.
-	
-	\item $(\phi \wedge \bigcirc \psi) \rightarrow \Diamond \Box \tau$	
-	
-	\noindent If $phi$ is true at time = $i$ and $\psi$ is true at time = $i + 1$,
-	then eventually $\tau$ becomes true and stays true.
-	
-	\item $\Box (( \psi \wedge \bigcirc \chi) \rightarrow \bigcirc \tau)$
-	
-	\noindent It is always the case that if $\psi$ is true at time = $i$ and if $\chi$ is 	 
-	true at time = $i + 1$, then $\tau$ is true at time = $i + 1.$
-	
-	\item $ (\chi \wedge \bigcirc \omega) \rightarrow \bigcirc^{2} ( \phi ~\mathcal{U}~ \psi )$
-	
-	\noindent If $\chi$ is true at time = $i$ and if $\omega$ is true at time = $i + 1$,
-	then at time  = $i + 2$ $\phi$ becomes true and stays true until $\psi$ becomes 
-	true.
-	
-	\item $( \phi \oplus \psi ) \rightarrow \Box \omega $
-	
-	\noindent If one of $\phi$ or $\psi$ are true at time = $i$, then $\omega$ becomes at
-	invariant at time = $i.$	
-	
-	
-\end{enumerate}
-
-
-\item The behavior of a program is expressed by the following temporal formula:
-
-\[
-\Box	\begin{bmatrix}
-	
-	1.~~   \textbf{start} \rightarrow \neg a \vee \neg b  \\
-	\ \\
-	2.~~   \textbf{start} \rightarrow c\\
-	\ \\    
-	3.~~   b \wedge c \rightarrow \bigcirc^{2} (d \oplus e)\\
-	\ \\    
-	4.~~   a \vee c \rightarrow \bigcirc (k~\mathcal{R}~g)\\
-	\ \\    
-	5.~~   (d \vee e) \rightarrow \bigcirc^{2} k\\
-	\ \\    
-	6.~~   c \rightarrow (h ~\mathcal{W}~ (e \wedge g))\\
-	\ \\    
-	7.~~   (d \wedge g \wedge h) \rightarrow \bigcirc^{3} m\\
-	\ \\
-	8.~~   d \rightarrow m~\mathcal{R}~h \\
-	\ \\
-	9.~~   e \wedge \bigcirc^{2} (k \wedge g) \rightarrow \bigcirc^{2}m \\
-	\ \\
-	10.~~  (e \wedge g) \rightarrow \bigcirc^{3} c\\
-	\ \\
-	11.~~  k \wedge m \rightarrow \bigcirc h\\
-	\ \\
-	12.~~  (e \wedge \bigcirc^{2}k) \rightarrow \bigcirc^{3}b \\
-	
-\end{bmatrix}
-\]
-
-
-
-
-
-\item Let $B(x)$ denote the subject ``x is a bird'' and $W(x)$ denote the predicate ``x is white.'' Translate the following formal statements into English sentences and attach the corresponding categorical form to each:
-
-\begin{enumerate}
-\item $\forall x~(B(x) \rightarrow W(x))$
-
-
-\item $\forall x~(B(x) \rightarrow \neg W(x))$ 
-
-
-\item $\exists x~(B(x) \wedge W(x))$ 
-
-
-\item $\exists x~(B(x) \wedge \neg W(x))$ 
-\end{enumerate}
-
-\noindent \underline{Solution}: \\
-
-\begin{enumerate}
-\item $\forall x~(B(x) \rightarrow W(x))$ : ``All birds are white.'': (A)
-\item $\forall x~(B(x) \rightarrow \neg W(x))$ : ``All birds are non-white.'': (E)
-\item $\exists x~(B(x) \wedge W(x))$ : ``Some birds are white.'': (I)
-\item $\exists x~(B(x) \wedge \neg W(x))$ : ``There is an non-white bird.'': (O)
-\end{enumerate}
-
-
-\item Describe when the following predicate can be false: $\forall x \exists y P(x, y)$.\\
-
-\noindent \underline{Solution}: The statement can be false when there is an $x$ such that $P(x, y)$ is false for every $y$.
-
-
-
-\item Let $P(x, y)$ be the statement ``x asked y out to lunch'' where the domain is all students in class. Express each of the following quantifications in English:
-
-\begin{enumerate}
-\item $\exists y \forall x P(x, y)$.\\
-
-\noindent \underline{Solution}: Recall that this reads \textbf{''There in an $y$ that makes $P(x, y)$ true for every $x$.''} There is a student in class who has been asked out to lunch by every student in class.\\
-
-\item $\forall x \exists y P(x, y)$.\\
-
-\noindent \underline{Solution}: Recall that this reads \textbf{``For every $x$ there is a $y$ for which $P(x, y)$ is true.''} Every student in class has asked out to lunch some (at least one) student in class.
-\end{enumerate}
-
-
-\end{enumerate}
-
-
-
-
-
-\noindent \textbf{An important observation on functions is that we can view them as relations, and as such we can model a function as a set of pairs (tuples)}.
-
-\begin{enumerate}
-
-\item Consider the following relation:
-
-\[ phone : Model \leftrightarrow Brand \]
-
-\noindent where
-
-\[
-phone = \\
-\{ \\
-\hspace{10mm} iPhone7 \mapsto apple,\\
-\hspace{10mm} iPhoneX \mapsto apple,\\
-\hspace{10mm} galaxyS \mapsto samsung,\\
-\hspace{10mm} galaxyA \mapsto samsung,\\
-\hspace{10mm} galaxyJ \mapsto samsung,\\
-\hspace{10mm} mate20 \mapsto huawei,\\
-\hspace{10mm} p20 \mapsto huawei\\
-\}
-\]
-
-\begin{enumerate}
-
-\item What is the domain of the relation?\\
-
-\noindent $\dom~phone = \{ iPhone7, iPhoneX, galaxyS, galaxyA, galaxyJ, mate20, p20 \}$.
-
+Card4: \\No need to flip this card since a yellow card doesn’t necessarily imply a non-prime number.
+\end{tabbing}
 
 \newpage
-
-
-\item What is the range of the relation?\\
-
-\noindent $\ran~phone = \{ apple, samsung, huawei \}$.
-
-
-\ \\
-
-
-\item What is the result of the expression  $\{ iPhone7, galaxyA \}  \lhd phone$ ?\\
-
-
-\noindent Domain restriction selects pairs based on their first element. As a result,
-
-\[ \{ iPhone7, galaxyA \}  \lhd phone = \{ iPhone7 \mapsto apple, galaxyA \mapsto samsung \} \]
-
-
-\noindent Restriction operators are deployed to model database \textit{queries}.
-
-
-\ \\
-
-
-\item What is the result of the expression  $phone \rhd \{ apple, samsung \}$ ?\\
-
-
-\noindent Range restriction selects pairs based on their second element. As a result,
-
-\[ 
-phone \rhd \{ apple, samsung \} = \\
-
-\hspace{5mm} \{ \\
-\hspace{10mm} iPhone7 \mapsto apple,\\
-\hspace{10mm} iPhoneX \mapsto apple,\\
-\hspace{10mm} galaxyS \mapsto samsung,\\
-\hspace{10mm} galaxyA \mapsto samsung,\\
-\hspace{10mm} galaxyJ \mapsto samsung\\
-\hspace{5mm} \}
-\]
-
-
-\newpage
-
-\noindent Consider the following Questions to be done in one sequence where we will make permanent modifications to the contents of $phone$:\\
-
-
-\item What is the result of the expression  $\{ iPhone7, iPhoneX, galaxyA, mate20 \} \ndres phone$ ?\\
-
-
-\noindent  Domain subtraction removes elements from the domain of the relation:\\
-
-
-\[
-\{ iPhone7, iPhoneX, galaxyA, mate20 \} \ndres phone = \\
-
-\hspace{5mm} \{ \\
-\hspace{10mm} galaxyS \mapsto samsung,\\
-\hspace{10mm} galaxyJ \mapsto samsung,\\
-\hspace{10mm} p20 \mapsto huawei\\
-\hspace{5mm} \}
-
-\]
-
-\noindent Note that for a modification to phone, we need to write
-
-
-\[ phone' = \{ iPhone7, iPhoneX, galaxyA,mate20  \} \ndres phone \]
-
-
-\noindent which reads as: ``The new value of phone is assigned the value of the evaluation of
-the expression on the right-hand-side.''
-
-
-
-\item What is the result of the expression  $phone \nrres \{ huawei \}$ ?\\
-
-
-\noindent  Range subtraction removes elements from the codomain of the relation:\\
-
-
-\[
-phone \nrres \{ huawei\} = \\
-
-\hspace{5mm} \{ \\
-\hspace{10mm} galaxyS \mapsto samsung,\\
-\hspace{10mm} galaxyJ \mapsto samsung\\
-\hspace{5mm} \}
-
-\]
-
-
-\noindent Assume now that we did
-
-\[ phone' = phone \nrres \{ huawei\} \]
-
-
-\noindent and as a result, the new value of $phone$ will be
-
-\[
-phone = \\
-
-\hspace{5mm} \{ \\
-\hspace{10mm} galaxyS \mapsto samsung,\\
-\hspace{10mm} galaxyJ \mapsto samsung\\
-\hspace{5mm} \}
-
-\]
-
-
-\ \\
-
-
-\item What is the result of $phone \oplus \{ iPhoneXSMax \mapsto apple \}$? \\
-
-
-\noindent Relational overriding can model database updates.
-
-\[
-phone \oplus \{ iPhoneXSMax \mapsto apple \} = \\
-\hspace{5mm} \{\\
-\hspace{10mm} iPhoneXSMax \mapsto apple, \\
-\hspace{10mm} galaxyS \mapsto samsung, \\
-\hspace{10mm} galaxyJ \mapsto samsung \\
-\hspace{5mm} \}
-\]
-
-\noindent Note that for a modification to $phone$, we need to write
-
-\[ phone' = phone \oplus \{ iPhoneXSMax \mapsto apple \} \]
-
+\section*{Problem 2: Propositional logic}
+\subsection*{Part 1}
+\begin{enumerate}
+	
+	\item (X orbits Sun AND Mass of X $\geq$ 0,33) → X is Planet
+	
+	(X is not Planet AND Y is Planet AND X orbits Y) → X is satellite of Y
+	
+	
+	\item is$\_$planet(X) :- orbits(X,sun), mass(X, Mass), Mass $\geq$ 0.33. 
+	
+	is$\_$satellite$\_$of(X,Y) :- is$\_$planet(Y), orbits(X , Y), not(is$\_$planet(X)).
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.75\textwidth]{is-planet_G.JPG}
+		\caption{is$\_$planet(earth) - Ground query.}
+	\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.75\textwidth]{is-planet_NG.JPG}
+		\caption{is$\_$planet(P) - Non-ground query.}
+	\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.75\textwidth]{is-satellite-of_G.JPG}
+		\caption{is$\_$satellite$\_$(moon,earth) - Ground query.}
+	\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.75\textwidth]{is-satellite-of_NG.JPG}
+		\caption{is$\_$satellite$\_$(L,jupiter) - Non-ground query.}
+	\end{figure}
+	
+	
+	\item obtain$\_$all$\_$satellites(Planet , L) :- findall(X , is$\_$satellite$\_$of(X , Planet) , L).
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.75\textwidth]{obtain-all-satellites_G.JPG}
+		\caption{obtain$\_$all$\_$satellites$\_$(earth,[moon]) - Ground query.}
+	\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.75\textwidth]{obtain-all-satellites_NG.JPG}
+		\caption{obtain$\_$all$\_$satellites$\_$(jupiter,L) - Non-ground query.}
+	\end{figure}
+	
 \end{enumerate}
-
-
-
-\item Consider the sets
-
-\begin{itemize}
-\item $Phone = \{ Samsung, Huawei, Apple, Sony, Motorola, HTC \}$, and
-\item  $Favorite = \{ Sony, HTC \}$.
-\end{itemize}
-
-\noindent Answer the following questions:
+\newpage
+\newpage
+\subsection*{Part 2}
 
 \begin{enumerate}
-
-\item How do we interpret the expression $Favorite : \mathbb{P} Phone$?
-
-\item Is $\mathbb{P} Phone$ a legitimate type?
-
-\item What is the nature of the variable in $Favorite : \mathbb{P} Phone$? (i.e. atomic or composite?)
-
-\item Is $Apple \in \mathbb{P} Phone$?
-
-\item Is $\{ Apple \} \in \mathbb{P} Phone$?
-
-\item Is $\{ \{ \} \} \in \mathbb{P} Phone$?
-
-\item Is $\{ \} \in \mathbb{P} Phone$?
-
-\item If we define variable $Favorite : \mathbb{P} Phone$, is $\{ \}$ a legitimate value for variable $Favorite$?
-
-\item Is $Favorite \in \mathbb{P} Phone$?
-
-\item Is $Favorite \subset \mathbb{P} Phone$?
-
+	\item Type O Particular Negative: $\exists x \neg P(x)$
+	
+	\item Type A Universal Affirmative: $\forall x P(x)$
+	
+	\item Type I Particular Affirmative: $\exists x P(x)$
+	
+	\item Type E Universal Negative: $\forall x \neg P(x)$
 \end{enumerate}
-
-\noindent \underline{Solution}:
+\subsection*{Part 3}
 
 \begin{enumerate}
-
-\item How do we interpret the expression $Favorite : \mathbb{P} Phone$? \underline{Answer}: This is  interpreted as ``The variable $Favorite$ can assume any value supported by the powerset of $Phone$.
-
-\item Is $\mathbb{P} Phone$ a legitimate type? \textbf{Yes.}
-
-\item What is the nature of the variable in $Favorite : \mathbb{P} Phone$? \underline{Answer}: Variable $Favorite$ is a \textbf{set}.
-
-\item Is $Apple \in \mathbb{P} Phone$? \textbf{No}.
-
-\item Is $\{ Apple \} \in \mathbb{P} Phone$?  \textbf{Yes}.
-
-\item Is $\{ \{ \} \} \in \mathbb{P} Phone$? \textbf{No}.
-
-\item Is $\{ \} \in \mathbb{P} Phone$? \textbf{Yes}.
-
-\item If we define variable $favorite : \mathbb{P} Phone$, is $\{ \}$ a legitimate value for variable $Favorite$? \textbf{Yes}.
-
-\item Is $Favorite \in \mathbb{P} Phone$? \textbf{Yes}.
-
-\item Is $Favorite \subset \mathbb{P} Phone$? \textbf{No}.
-
-\end{enumerate}
-
-
-
-
-
-
-
-
-
-
-\item Consider the following relation:
-
-\[ laptops : Model \leftrightarrow Brand \]
-
-\noindent where
-
-\[
-laptops = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} legion5 \mapsto lenovo,\\
-\hspace{10mm} macbookair \mapsto apple,\\
-\hspace{10mm} xps15 \mapsto dell,\\
-\hspace{10mm} spectre \mapsto hp,\\
-\hspace{10mm} xps13 \mapsto dell,\\
-\hspace{10mm} swift3 \mapsto acer,\\
-\hspace{10mm} macbookpro \mapsto apple,\\
-\hspace{10mm} dragonfly \mapsto hp,\\
-\hspace{10mm} envyx360 \mapsto hp\\
-\hspace{5mm} \}
-\]
-
+	
+	\item The formal definition of Type O categorical propositions is $\exists x \neg P(x)$.
+	By negating a type A categorical proposition, and following the laws of logic, we find that:
+	
+	$\neg (\forall x P(x))$ $\equiv$ $\exists x \neg P(x)$ AND 
+	$\neg (\exists x \neg P(x))$ $\equiv$ $\forall x P(x)$
+	
+	\item The formal definition of Type E categorical propositions is $\forall x \neg P(x)$. In Negating a type E proposition, the universal quantifier($\forall $) becomes the existential quantifier($\exists$) and the proposition is negated. The result yields the type I proposition ($\exists x P(x)$). In the inverse, negating a type I proposition yields a type E proposition.
+	
+	$\neg (\forall x \neg P(x))$ $\equiv$ $\exists x P(x)$ AND $\neg (\exists x P(x))$ $\equiv$ $\forall x \neg P(x)$.
+	\end{enumerate}
+\newpage
+\section*{Problem 3: Temporal logic}
+\subsection*{Part 1}
 \begin{enumerate}
-
-\item What is the domain and the range of the relation?\\
-
-\noindent \underline{Answer}:
-
-\begin{itemize}
-\item The domain is defined as:  % \textbf{\underline{Marking:  0.5 pt}}
-\[
-\dom laptops = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} legion5,\\
-\hspace{10mm} macbookair,\\
-\hspace{10mm} xps15,\\
-\hspace{10mm} spectre,\\
-\hspace{10mm} xps13,\\
-\hspace{10mm} swift3,\\
-\hspace{10mm} macbookpro,\\
-\hspace{10mm} dragonfly,\\
-\hspace{10mm} envyx360\\
-\hspace{5mm} \}
-\]
-
-
-\item The range is defined as:  $\ran~laptops = \{ lenovo, apple, dell, hp, acer \}$.
-
-
-\end{itemize}
-
-
-\item What is the result of the expression
-
-\[ \{ xps15, xps13, swift3, envyx360 \}  \lhd laptops \]
-
-\noindent What is the meaning of operator $\lhd$ and where would you deploy such operator in the context of a database management system?
-
-\newpage
-
-\noindent \underline{Answer}:
-
-\noindent The result is 
-
-\[ \{ xps15, xps13, swift3, envyx360 \}  \lhd laptops = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} xps15 \mapsto dell,\\
-\hspace{10mm} xps13 \mapsto dell,\\
-\hspace{10mm} swift3 \mapsto acer,\\
-\hspace{10mm} envyx360 \mapsto hp\\
-\hspace{5mm} \}
-\]
-
-\noindent Domain restriction selects pairs based on their first element. We deploy such operators to model database queries. 
-
-
-\item What is the result of the expression
-
-\[ laptops \rhd \{ lenovo, hp \} \]
-
-\noindent What is the meaning of operator $\rhd$ and where would you deploy such operator in the context of a database management system?
-
-\noindent \underline{Answer}:
-
-\noindent The result is 
-
-
-\[ laptops \rhd \{ lenovo, hp \} = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} legion5 \mapsto lenovo,\\
-\hspace{10mm} spectre \mapsto hp,\\
-\hspace{10mm} dragonfly \mapsto hp,\\
-\hspace{10mm} envyx360 \mapsto hp\\
-\hspace{5mm} \}
-\]
-
-\noindent Range restriction selects pairs based on their second element. We deploy such operators to model database queries. 
-
-
-\item What is the result of the expression
-
-\[ \{ legion5, xps15, xps13, dragonfly \} \ndres laptops \]
-
-\noindent What is the meaning of operator $\ndres$ and where would you deploy such operator in the context of a database management system?
-
-\noindent \underline{Answer}:
-
-\noindent \noindent The result is 
-
-\[ \{ legion5, xps15, xps13, dragonfly \} \ndres laptops = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} macbookair \mapsto apple,\\
-\hspace{10mm} spectre \mapsto hp,\\
-\hspace{10mm} swift3 \mapsto acer,\\
-\hspace{10mm} macbookpro \mapsto apple,\\
-\hspace{10mm} envyx360 \mapsto hp\\
-\hspace{5mm} \}
-\]
-
-\noindent  Domain subtraction removes elements from the domain of the relation. We deploy such operation to model deletion of records. 
-
-
-\item What is the result of the expression
-
-\[ laptops \nrres \{ apple, dell, hp \} \]
-
-\noindent What is the meaning of operator $\nrres$ and where would you deploy such operator in the context of a database management system?
-
-\newpage
-
-\noindent \underline{Answer}:
-
-
-\noindent \noindent The result is 
-
-\[
-laptops \nrres \{ apple, dell, hp \} = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} legion5 \mapsto lenovo,\\
-\hspace{10mm} swift3 \mapsto acer\\
-\hspace{5mm} \}
-\]
- 
- 
-\noindent  Range subtraction removes elements from the codomain of the relation. We deploy such operation to model database updates (deletion of records). % \textbf{\underline{Marking:  1.5 pts}}
-
-
-
-\item Consider the following expression
-
-\[ laptops \oplus \{ ideapad \mapsto lenovo \} \]
-
-
+	\item \begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.60\textwidth]{SOEN331_A1_P311.PNG}
+		\caption{Visualization Problem 3}
+	\end{figure}
+	
+	\newpage
+	\item In order for the program to terminate, some conditions need to be met depending on the state of the program. If $\omega$ becomes true then for the program to terminate, $\pi$ must also become true at least once after $\omega$. In the case of $\tau$ becoming true then for the program to terminate, $\rho$ must become true after $\tau$. Given any state, the program will terminate eventually.
+	 
+\end{enumerate}
+\subsection*{Part 2}
 \begin{enumerate}
-\item What is the result of the expression?
-
-\item What is the meaning of operator $\oplus$ and where would you deploy such operator in the context of a database management system?
-
-\item Does the result of the expression have a permanent effect on the database (relation)? If not, describe in detail how would you ensure a permanent effect. 
-
+	
+	\item
+	 ($\neg\square\phi$ $\wedge$ $\neg\square\psi$) $\rightarrow$ $\bigcirc\textsuperscript{2}(\lozenge$(x $\mathcal{W}$ $\tau$))
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.60\textwidth]{SOEN331_A1_P321.PNG}
+		\caption{Visualization Problem 3 | Part 2 | 1.}
+	\end{figure}
+	\item If $\alpha$ and $\beta$ do not hold true at the same time then starting the next state, $\gamma$ will eventually hold true until the moment $\delta$ becomes true. $\delta$ is guaranteed to become true.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.40\textwidth]{SOEN331_A1_P322(visual-formula).PNG}
+		\caption{Visualization Problem 3 | Part 2 | 2.}
+	\end{figure}
+	\item If starting at time = i+1, $\tau$ becomes true and $\mathcal{X}$ eventually becomes invariant; Then starting in time = i + 2, $\phi$ becomes true and holds true unless $\psi$ becomes true.
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.50\textwidth]{SOEN331_A1_P323(visual-formula).PNG}
+		\caption{Visualization Problem 3 | Part 2 | 3.}
+	\end{figure}
 \end{enumerate}
-
 \newpage
-
-\noindent \underline{Answer}:
-
-
+\section*{Problem 4: Unordered structures}
 \begin{enumerate}
-\item  The result is 
-
-\[ laptops \oplus \{ ideapad \mapsto lenovo \} = \\
-\hspace{5mm} \{ \\
-\hspace{10mm} ideapad \mapsto lenovo,\\
-\hspace{10mm} legion5 \mapsto lenovo,\\
-\hspace{10mm} macbookair \mapsto apple,\\
-\hspace{10mm} xps15 \mapsto dell,\\
-\hspace{10mm} spectre \mapsto hp,\\
-\hspace{10mm} xps13 \mapsto dell,\\
-\hspace{10mm} swift3 \mapsto acer,\\
-\hspace{10mm} macbookpro \mapsto apple,\\
-\hspace{10mm} dragonfly \mapsto hp,\\
-\hspace{10mm} envyx360 \mapsto hp\\
-\hspace{5mm} \}
-\]
-
-\item Relational overriding can model database updates (addition of records).
-
-
-\item The expression does not have a permanent effect on the database (relation). To ensure a permanent effect on the relation, we need to define an assignment statement
-
-\[ laptops' = laptops \oplus \{ ideapad \mapsto lenovo \} \]
-
-\noindent which reads ``The value of variable (relation) $laptops$ is assigned the result of the expression on the right-hand-side of the assignment statement.''
-
+	\item PLanguages would be a set containing all possible subsets of Languages, namely the powerset of languages
+	\item 
+	\begin{enumerate}
+		\item Favorites is a non-atomic element, or a subset, of the powerset of the Languages set.
+		\item It should be interpreted as a set
+		\item Favorites can be the empty set, any subset of the power set of Languages, or Languages itself.
+	\end{enumerate}
+	\item
+	\begin{enumerate}
+		\item Favorites is equal to the entire powerset of the Languages set
+		\item Favorite is a single non-atomic element of the powerset of the Languages set. Not the entire powerset of Languages.
+	\end{enumerate}
+	
+	\item No, because the element of the Language set $\{$Lua, Groovy, C$\}$ is not a set of sets and therefore cannot be a member of the powerset of the Language set.
+	Having the set $\{$Lua,Groovy,C$\}$ in the power set of Languages would imply that the atomic variable Lua, Groovy and C are contained within the Languages set, which is not the case for Lua.
+	
+	\item Yes, because $\{ \{$Lua,Groovy,C$\} \}$ is an element of the powerset of Languages where the superset only contains the element $\{$Lua,Groovy, C$\}$, and not the individual atomic variables.
+	\item
+	\begin{enumerate}
+		\item The variable can be either atomic or non-atomic, depending on what element of Languages it is assigned to. This is because Languages holds both atomic and non-atomic variables.
+		\item Non-Atomic. This variable represents a set of elements
+	\end{enumerate}	
+	\item Library: PLanguages
+	\item No, because the set containing the empty set (‘$\{ \{ \} \}$’) is not an element of the powerset but the empty set (‘$\{ \}$’) would be.
+	\item Refer to problem4-9.lsp in /code
 \end{enumerate}
+\section*{Problem 5: Ordered structures}
+\begin{enumerate}
+	\item 
+	
+	\begin{tabbing}
+		\hspace{0.5pt}\=
+		\\ % Adjust the width of the tab here
+		\>Enqueue(Q, T): \hspace{0.5pt}\=\\
+		\>\> cons(T , $\Sigma$1) \\
+		\\
+		\>Dequeue(Q): \\
+		\>\> while $\Sigma$1 is not empty:\hspace{0.5pt}\= \\
+		\>\>\> cons(head($\Sigma$1) , $\Sigma$2) \\
+		\>\> $\Sigma$1’ = tail($\Sigma$1) \\
+		\>\> If $\Sigma$2 is empty: \\
+		\>\>\> return null \\
+		\>\> Else: \\
+		\>\>\> $\Sigma$1’ = $\Sigma$2 \\
+		\>\>\> $\Sigma$2 = cons(nil , $\langle \rangle$) \\
+		\>\>\> Return head($\Sigma$1)
+	\end{tabbing}
+	
+	\item Refer to file queue-adt.lsp in /code
+\end{enumerate}
+\section*{Problem 6: Binary relations, functions and orderings}
+\subsection*{Part 1}
+\begin{enumerate}
+	\item
+	Given binary relation R : “is of type” in the domain of types in the Java API, we find that:\newline
+	1 - R is reflexive, $\forall$a $\in$A : aRa, meaning for any type a, a is of type a. This is true because, in the Java API, any type is considered to be a type of itself;
+	
+	2 - R is anti-symmetric, $\forall$a, b $\in$ A : (aRb $\wedge$ bRa) → a = b, meaning for any type a and b, if a is of type b and b is of type, then a = b. In the Java API, for an element to be of a specific type, it must be an element of that type, or an element of a subtype of that type. This means that for two types to be types of each other, they must be the same type.
+	
+	3 - R is transitive, $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) → aRc, meaning for any type a, b and c, if a is of type b, and b is of type c, then a is of type c. As stated previously, for an element to be of a specific type, it must be an element of that type, or an element of a subtype of that type. So, if a is of type b, and b is of type c, we can come to the conclusion that a is of type c.
+	
+	Therefore, we find that R is a partial order.
+	\item
+	Given the set of vertices V1 and edges E, we can prove that (V1, R) is a poset:
+	
+	1 - From the given edges, there are explicit examples of the reflexive property. However, in the Java API context, reflexivity is implied, as any type is considered to be a type of itself.
+	
+	2 - In the given edges, there are no examples of two types relating to each other, and not being the same type, therefore, the conditions for anti-symmetry are satisfied.
+	
+	3 - Given the context of the Java API, (V1,R) can be considered transitive because of inheritance. For example, in the given edges, we find that NavigableMap is of type SortedMap, and that SortedMap is of type Map, therefore, considering the context, NavigableMap is also of type Map.
+	
+	\item
+\end{enumerate}
+\subsection*{Part 2}
+\begin{enumerate}
+	\item 
+	1 - The binary relation is subset of is reflexive, $\forall$a $\in$ A : aRa, since every set is a subset of itself.
+	
+	2 - It is antisymmetric, $\forall$a, b $\in$ A : (aRb $\wedge$ bRa) → a = b, since any two sets that are subsets of each other must be the same set.
+	
+	3 - It is also transitive, $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) → aRc, because if a set S1 is a subset of a set S2, and S2 is a subset that a set S3, then S1 is a subset of S3.
+	For example, S1 = $\{1 , 2\}$, S2 = $\{1 , 2 , 3\}$ and S3 = $\{1 , 2 , 3 , 4\}$, S1 is a subset of S2, and S2 is a subset of S3, and S1 is also a subset of S3.
+	
+	\item
+	P(V2) = $\{\{\} , \{a\} , \{b\} , \{c\} , \{a,b\} , \{a,c\} , \{b,c\} \{a,b,c\}\}$
+	
+	1 - The power set of V2 is indeed reflexive since all sets within P(V2) are subsets of themselves.
+	
+	2 - It is anti-symmetric since there are no 2 distinct elements that are subsets of each other, or (a, b) $\in$ A $\wedge$ a $\neq$ b $\rightarrow$ (b, a) $\not\in$ R.
+	
+	3 - It is transitive since $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) $\rightarrow$ aRc. This can be seen in P(V2) from $\{a\}$ , $\{a,b\}$ and $\{a,b,c\}$, where $\{a\}$ is a subset of both $\{a,b\}$ and $\{a,b,c\}$, and $\{a,b\}$ is a subset of $\{a,b,c\}$.
+\end{enumerate}
+\subsection*{Part 3}
+\begin{enumerate}
+	\item - Map is indeed a function, since every element in the domain maps to at most 1 element in the co-domain.
+	
+	\item - It is a partial function, since not every element in the domain participated in the mapping. 		map : V1 $\not\rightarrow$ P(V2)
+	
+	\item - It is not injective since some elements in the co-domain are mapped to twice, namely $\{a ,b ,c\}$. The definition for an injective function is $\forall$x, y $\in$ V1 : x $\neq$ y → f (x) $\neq$ f (y), which is not followed in this case.
+	
+	\item - It is not surjective since not every element in the co-domain is mapped to by at least one element in the domain. The definition for a surjective function is $\forall$z $\exists$ P(V2), $\exists$x $\in$ V1 : f (x) = z, which is not the case.
+	
+	\item - Since the function is neither injective nor surjective, it is not bijective.
+	
+	\item -  The function is order-preserving since all predecessor relationships between elements in the domain are preserved by their images in the codomain. In other words 
+	x $\prec$ y in V1 implies f (x) $\prec$ f (y) in P(V2). In this case, we have NavigableMap → {c} and TreeMap → $\{\}$, where TreeMap $\prec$ NavigableMap in V1 implies {} $\prec$ {c} in P(V2).
+	
+	\item - The function is not order-preserving since not all predecessor relationships between elements in the codomain are reflected by their pre-images in the domain. In other words, we say a function is order reflecting if f (x) $\prec$ f (y) in P(V2) implies x $\prec$ y in V1. In this case, we have $\{c\}$ $\prec$ $\{a,b,c\}$ , which is not reflected by the images, meaning we don’t have NavigableMap $\prec$ AbstractMap.
+	
+	\item - The function is not order-embedding since it is not both order-preserving and order-reflecting.
+	
+	\item -  The function is not isomorphic since it is neither order-embedding nor surjective.
 \end{enumerate}
 
-\newpage
 
-\item You can produce a figure using any drawing package and save it as an image e.g. \texttt{.png}.  The image file can then be embedded in your \texttt{.tex} document as follows:
+\section*{Problem 7: Construction techniques}
+\begin{enumerate}
+	\item 
+	\begin{verbatim}
+		compress (T) is
+			comp_list = ⟨⟩
+			for all i in T
+				if(head(comp_list) != i)
+					consR(com_list, i)
+			return comp_list
+	\end{verbatim}
 
-\begin{figure}[h!]
-	\centering
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-
+	\item
+	\begin{verbatim}
+		compress (T) is
+			if(T = ⟨⟩) then
+				return ⟨⟩
+			if(head(T) = head(tail(T))) then
+				return compress(tail(T))
+			else
+				return cons(head(T), compress(tail(T)))
+	\end{verbatim}
+	
+	\item 
+	\begin{verbatim}
+	compress(⟨a, a, b, b, c, a⟩) = compress(⟨a,b,b,c,a⟩)
+								= cons(a, compress(⟨b,b,c,a⟩))
+								= cons(a, compress(⟨b,c,a⟩))
+								= cons(a, cons(b, compress(⟨c,a⟩)))
+								= cons(a, cons(b, cons(c, compress(⟨a⟩))))
+								= cons(a, cons(b, cons(c, cons(a, compress(⟨⟩)))))
+								= cons(a, cons(b, cons(c, cons(a, ⟨⟩))))
+								= cons(a, cons(b, cons(c, ⟨a⟩)))
+								= cons(a, cons(b, ⟨c ,a⟩))
+								= cons(a, ⟨b ,c ,a⟩)
+								= ⟨a, b ,c ,a⟩
+	\end{verbatim}
+	
+	\item Refer to file compress.lisp in /code
+	
 \end{enumerate}
+
 
 \end{spacing}
-
 \end{document}
