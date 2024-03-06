@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1709766947.81684 "c:/Users/markg/OneDrive/School/Winter 24/SOEN331/SOEN331_ASM/SOEN331-A1.tex" "SOEN331-A1.pdf" "SOEN331-A1" 1709766948.74933 0
+["pdflatex"] 1709768933.92747 "c:/Users/markg/OneDrive/School/Winter 24/SOEN331/SOEN331_ASM/SOEN331-A1.tex" "SOEN331-A1.pdf" "SOEN331-A1" 1709768935.06326 0
   "C:/Users/markg/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1709754431 80937 91001db6d4ae332437b4b739862cda02 ""
   "C:/Users/markg/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1708100238 14064 4ea4c1df943b9db8cf0b2a763580fd39 ""
   "C:/Users/markg/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt1200.pk" 1709753293 11368 8b4e92e740ff59bbb204098221d59d0e ""
@@ -89,13 +89,15 @@
   "C:/Users/markg/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1700599895 7147 d45559f8a31b8c53ada0640516660003 ""
   "C:/Users/markg/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty" 1700599895 7500 db31c3d04f8bc9010e47a5efbbace9ff ""
   "C:/Users/markg/AppData/Local/Programs/MiKTeX/tex/latex/zed-csp/zed-csp.sty" 810885600 31787 bd97b6f8c37a7c9064f057eb2f29c352 ""
-  "SOEN331-A1.aux" 1709766948 2117 1cca9e585ba0808c24d526a3a40cecca "pdflatex"
-  "SOEN331-A1.tex" 1709766947 15070 1cdcb4c6bf5049f61881a5556b79706a ""
+  "SOEN331-A1.aux" 1709768934 2381 39bacd0f2f3f527bc01b59f743f5d302 "pdflatex"
+  "SOEN331-A1.tex" 1709768931 15679 81a185f58555196e25f7666af175965c ""
   "SOEN331_A1_P311.PNG" 1709753259 73893 49d7f13bab78a63fb76d9cbd32b040d8 ""
   "SOEN331_A1_P321.PNG" 1709753259 13658 d69e47e8b5887b27ab812bcbc10bd22e ""
   "SOEN331_A1_P322(visual-formula).PNG" 1709753260 9910 72b56d1c80f5e8271b7ab685d23f241f ""
   "SOEN331_A1_P323(visual-formula).PNG" 1709753261 10499 042a42e86fffd04db5f307b51e8b71fe ""
-  "c:/Users/markg/OneDrive/School/Winter 24/SOEN331/SOEN331_ASM/SOEN331-A1.tex" 1709766947 15070 1cdcb4c6bf5049f61881a5556b79706a ""
+  "SOEN331_A1_P613.PNG" 1709768889 44130 f4eb21eae26c51251c135f51f5efd5ca ""
+  "SOEN331_A1_P623.PNG" 1709767209 59361 cddf1ae3b7618ba9f12da2f25d16bd0f ""
+  "c:/Users/markg/OneDrive/School/Winter 24/SOEN331/SOEN331_ASM/SOEN331-A1.tex" 1709768931 15679 81a185f58555196e25f7666af175965c ""
   "is-planet_G.JPG" 1709753264 111821 0fa0c3be6cb0f83e5a3a0c9c2be9ce07 ""
   "is-planet_NG.JPG" 1709753264 117250 0471144396d6fb7a8393a4ed0cc7722c ""
   "is-satellite-of_G.JPG" 1709753265 120955 1463c2c2edc5760a3361dd9a6b98a296 ""

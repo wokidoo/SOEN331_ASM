@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.16)  6 MAR 2024 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.16)  6 MAR 2024 18:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,32 +548,32 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 <is-planet_G.JPG, id=12, 577.55775pt x 531.1845pt>
 File: is-planet_G.JPG Graphic file (type jpg)
 <use is-planet_G.JPG>
-Package pdftex.def Info: is-planet_G.JPG  used on input line 63.
+Package pdftex.def Info: is-planet_G.JPG  used on input line 65.
 (pdftex.def)             Requested size: 352.31625pt x 324.03827pt.
 <is-planet_NG.JPG, id=13, 579.3645pt x 529.98pt>
 File: is-planet_NG.JPG Graphic file (type jpg)
 <use is-planet_NG.JPG>
-Package pdftex.def Info: is-planet_NG.JPG  used on input line 69.
+Package pdftex.def Info: is-planet_NG.JPG  used on input line 71.
 (pdftex.def)             Requested size: 352.31625pt x 322.29263pt.
 <is-satellite-of_G.JPG, id=14, 661.87276pt x 529.98pt>
 File: is-satellite-of_G.JPG Graphic file (type jpg)
 <use is-satellite-of_G.JPG>
-Package pdftex.def Info: is-satellite-of_G.JPG  used on input line 75.
+Package pdftex.def Info: is-satellite-of_G.JPG  used on input line 77.
 (pdftex.def)             Requested size: 352.31625pt x 282.11725pt.
 <is-satellite-of_NG.JPG, id=15, 660.066pt x 531.78674pt>
 File: is-satellite-of_NG.JPG Graphic file (type jpg)
 <use is-satellite-of_NG.JPG>
-Package pdftex.def Info: is-satellite-of_NG.JPG  used on input line 81.
+Package pdftex.def Info: is-satellite-of_NG.JPG  used on input line 83.
 (pdftex.def)             Requested size: 352.31625pt x 283.84177pt.
 <obtain-all-satellites_G.JPG, id=16, 775.698pt x 530.58224pt>
 File: obtain-all-satellites_G.JPG Graphic file (type jpg)
 <use obtain-all-satellites_G.JPG>
-Package pdftex.def Info: obtain-all-satellites_G.JPG  used on input line 90.
+Package pdftex.def Info: obtain-all-satellites_G.JPG  used on input line 89.
 (pdftex.def)             Requested size: 352.31625pt x 240.9862pt.
 <obtain-all-satellites_NG.JPG, id=17, 760.0395pt x 529.98pt>
 File: obtain-all-satellites_NG.JPG Graphic file (type jpg)
 <use obtain-all-satellites_NG.JPG>
-Package pdftex.def Info: obtain-all-satellites_NG.JPG  used on input line 96.
+Package pdftex.def Info: obtain-all-satellites_NG.JPG  used on input line 95.
 (pdftex.def)             Requested size: 352.31625pt x 245.66989pt.
  [3 <./is-planet_G.JPG>] [4 <./is-planet_NG.JPG>] [5 <./is-satellite-of_G.JPG> <./is-satellite-of_NG.JPG>] [6 <./obtain-all-satellites_G.JPG> <./obtain-all-satellites_NG.JPG>] [7]
 <SOEN331_A1_P311.PNG, id=36, 896.34875pt x 1506.62875pt>
@@ -604,28 +604,40 @@ File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 183.
- [10 <./SOEN331_A1_P323(visual-formula).PNG>] [11] [12] [13]
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 289.
+ [10 <./SOEN331_A1_P323(visual-formula).PNG>] [11]
+<SOEN331_A1_P613.PNG, id=61, 492.84125pt x 412.54124pt>
+File: SOEN331_A1_P613.PNG Graphic file (type png)
+<use SOEN331_A1_P613.PNG>
+Package pdftex.def Info: SOEN331_A1_P613.PNG  used on input line 243.
+(pdftex.def)             Requested size: 281.85587pt x 235.9441pt.
+ [12] [13 <./SOEN331_A1_P613.PNG>]
+<SOEN331_A1_P623.PNG, id=70, 553.06625pt x 492.84125pt>
+File: SOEN331_A1_P623.PNG Graphic file (type png)
+<use SOEN331_A1_P623.PNG>
+Package pdftex.def Info: SOEN331_A1_P623.PNG  used on input line 270.
+(pdftex.def)             Requested size: 281.85587pt x 251.1577pt.
+ [14 <./SOEN331_A1_P623.PNG>]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 305.
  (C:\Users\markg\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [14] [15] (SOEN331-A1.aux)
+) [15] [16] (SOEN331-A1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5773 strings out of 474542
- 88522 string characters out of 5744446
+ 5787 strings out of 474542
+ 88884 string characters out of 5744446
  1930978 words of memory out of 5000000
- 27907 multiletter control sequences out of 15000+600000
+ 27921 multiletter control sequences out of 15000+600000
  570054 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,7n,69p,527b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61i,7n,69p,532b,1797s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\markg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1200.pk> <C:\Users\markg\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/markg/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on SOEN331-A1.pdf (15 pages, 934336 bytes).
+Output written on SOEN331-A1.pdf (16 pages, 979744 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

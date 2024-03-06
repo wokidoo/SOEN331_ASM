@@ -17,7 +17,7 @@
 \title{SOEN 331 (U):Formal Methods\\for Software Engineering\\
 \ \\
 Assignment 1}
-\author{Charles Partous (40175854), Mark Ghaby ()}
+\author{Charles Partous (40175854), Mark Ghaby (40201940)}
 \date{March 7, 2024}
 \begin{spacing}{1.5}
 \begin{document}
@@ -58,6 +58,8 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 	
 	is$\_$satellite$\_$of(X,Y) :- is$\_$planet(Y), orbits(X , Y), not(is$\_$planet(X)).
 	
+	\item obtain$\_$all$\_$satellites(Planet , L) :- findall(X , is$\_$satellite$\_$of(X , Planet) , L).
+
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.75\textwidth]{is-planet_G.JPG}
@@ -81,9 +83,6 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 		\includegraphics[width=0.75\textwidth]{is-satellite-of_NG.JPG}
 		\caption{is$\_$satellite$\_$of(L,jupiter) - Non-ground query.}
 	\end{figure}
-	
-`'
-	\item obtain$\_$all$\_$satellites(Planet , L) :- findall(X , is$\_$satellite$\_$of(X , Planet) , L).
 		
 	\begin{figure}[htbp]
 		\centering
@@ -129,7 +128,8 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 \section*{Problem 3: Temporal logic}
 \subsection*{Part 1}
 \begin{enumerate}
-	\item \begin{figure}[htbp]
+	\item Visualization
+	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.60\textwidth]{SOEN331_A1_P311.PNG}
 		\caption{Visualization Problem 3}
@@ -235,9 +235,15 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 	
 	2 - In the given edges, there are no examples of two types relating to each other, and not being the same type, therefore, the conditions for anti-symmetry are satisfied.
 	
-	3 - Given the context of the Java API, (V1,R) can be considered transitive because of inheritance. For example, in the given edges, we find that NavigableMap is of type SortedMap, and that SortedMap is of type Map, therefore, considering the context, NavigableMap is also of type Map.
+	3 - Given the context of the Java API, (\(V_1\),R) can be considered transitive because of inheritance. For example, in the given edges, we find that NavigableMap is of type SortedMap, and that SortedMap is of type Map, therefore, considering the context, NavigableMap is also of type Map.
 	
-	\item
+	\item Hasse Diagram of (\(V_1,R\))
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.60\textwidth]{SOEN331_A1_P613.PNG}
+		\caption{Visualization Problem 6.1.3}
+	\end{figure}
+	
 \end{enumerate}
 \subsection*{Part 2}
 \begin{enumerate}
@@ -246,34 +252,44 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 	
 	2 - It is antisymmetric, $\forall$a, b $\in$ A : (aRb $\wedge$ bRa) → a = b, since any two sets that are subsets of each other must be the same set.
 	
-	3 - It is also transitive, $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) → aRc, because if a set S1 is a subset of a set S2, and S2 is a subset that a set S3, then S1 is a subset of S3.
-	For example, S1 = $\{1 , 2\}$, S2 = $\{1 , 2 , 3\}$ and S3 = $\{1 , 2 , 3 , 4\}$, S1 is a subset of S2, and S2 is a subset of S3, and S1 is also a subset of S3.
+	3 - It is also transitive, $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) → aRc, because if a set \(S_1\) is a subset of a set \(S_2\), and \(S_2\) is a subset that a set \(S_3\), then \(S_1\) is a subset of \(S_3\).
+	For example, \(S_1\) = $\{1 , 2\}$, \(S_2\) = $\{1 , 2 , 3\}$ and \(S_3\) = $\{1 , 2 , 3 , 4\}$, \(S_1\) is a subset of \(S_2\), and \(S_2\) is a subset of \(S_3\), and \(S_1\) is also a subset of \(S_3\).
 	
 	\item
-	P(V2) = $\{\{\} , \{a\} , \{b\} , \{c\} , \{a,b\} , \{a,c\} , \{b,c\} \{a,b,c\}\}$
+	P(\(V_2\)) = $\{\{\} , \{a\} , \{b\} , \{c\} , \{a,b\} , \{a,c\} , \{b,c\} \{a,b,c\}\}$
 	
-	1 - The power set of V2 is indeed reflexive since all sets within P(V2) are subsets of themselves.
+	1 - The power set of \(V_2\) is indeed reflexive since all sets within P(\(V_2\)) are subsets of themselves.
 	
 	2 - It is anti-symmetric since there are no 2 distinct elements that are subsets of each other, or (a, b) $\in$ A $\wedge$ a $\neq$ b $\rightarrow$ (b, a) $\not\in$ R.
 	
-	3 - It is transitive since $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) $\rightarrow$ aRc. This can be seen in P(V2) from $\{a\}$ , $\{a,b\}$ and $\{a,b,c\}$, where $\{a\}$ is a subset of both $\{a,b\}$ and $\{a,b,c\}$, and $\{a,b\}$ is a subset of $\{a,b,c\}$.
+	3 - It is transitive since $\forall$a, b, c $\in$ A : (aRb $\wedge$ bRc) $\rightarrow$ aRc. This can be seen in P(\(V_2\)) from $\{a\}$ , $\{a,b\}$ and $\{a,b,c\}$, where $\{a\}$ is a subset of both $\{a,b\}$ and $\{a,b,c\}$, and $\{a,b\}$ is a subset of $\{a,b,c\}$.
+
+	\item Hasse Diagram of \((P(V_2) , \subseteq)\)
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.60\textwidth]{SOEN331_A1_P623.PNG}
+		\caption{Visualization Problem 6.2.3}
+	\end{figure}
+
+	Minimal Values: \(\{\{\}\}\).\\
+	Maximal Values: \(\{a,b,c\}\).
 \end{enumerate}
 \subsection*{Part 3}
 \begin{enumerate}
 	\item - Map is indeed a function, since every element in the domain maps to at most 1 element in the co-domain.
 	
-	\item - It is a partial function, since not every element in the domain participated in the mapping. 		map : V1 $\not\rightarrow$ P(V2)
+	\item - It is a partial function, since not every element in the domain participated in the mapping. 		map : V1 $\not\rightarrow$ P(\(V_2\))
 	
 	\item - It is not injective since some elements in the co-domain are mapped to twice, namely $\{a ,b ,c\}$. The definition for an injective function is $\forall$x, y $\in$ V1 : x $\neq$ y → f (x) $\neq$ f (y), which is not followed in this case.
 	
-	\item - It is not surjective since not every element in the co-domain is mapped to by at least one element in the domain. The definition for a surjective function is $\forall$z $\exists$ P(V2), $\exists$x $\in$ V1 : f (x) = z, which is not the case.
+	\item - It is not surjective since not every element in the co-domain is mapped to by at least one element in the domain. The definition for a surjective function is $\forall$z $\exists$ P(\(V_2\)), $\exists$x $\in$ V1 : f (x) = z, which is not the case.
 	
 	\item - Since the function is neither injective nor surjective, it is not bijective.
 	
 	\item -  The function is order-preserving since all predecessor relationships between elements in the domain are preserved by their images in the codomain. In other words 
-	x $\prec$ y in V1 implies f (x) $\prec$ f (y) in P(V2). In this case, we have NavigableMap → {c} and TreeMap → $\{\}$, where TreeMap $\prec$ NavigableMap in V1 implies {} $\prec$ {c} in P(V2).
+	x $\prec$ y in V1 implies f (x) $\prec$ f (y) in P(\(V_2\)). In this case, we have NavigableMap → {c} and TreeMap → $\{\}$, where TreeMap $\prec$ NavigableMap in V1 implies {} $\prec$ {c} in P(\(V_2\)).
 	
-	\item - The function is not order-preserving since not all predecessor relationships between elements in the codomain are reflected by their pre-images in the domain. In other words, we say a function is order reflecting if f (x) $\prec$ f (y) in P(V2) implies x $\prec$ y in V1. In this case, we have $\{c\}$ $\prec$ $\{a,b,c\}$ , which is not reflected by the images, meaning we don’t have NavigableMap $\prec$ AbstractMap.
+	\item - The function is not order-preserving since not all predecessor relationships between elements in the codomain are reflected by their pre-images in the domain. In other words, we say a function is order reflecting if f (x) $\prec$ f (y) in P(\(V_2\)) implies x $\prec$ y in V1. In this case, we have $\{c\}$ $\prec$ $\{a,b,c\}$ , which is not reflected by the images, meaning we don’t have NavigableMap $\prec$ AbstractMap.
 	
 	\item - The function is not order-embedding since it is not both order-preserving and order-reflecting.
 	
