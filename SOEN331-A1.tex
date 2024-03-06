@@ -9,6 +9,7 @@
 \usepackage{setspace}
 \usepackage{listings}
 
+
 \usepackage{amssymb,amsmath, amsthm}
 \usepackage{zed-csp}
 \usepackage[cc]{titlepic}
@@ -72,18 +73,18 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.75\textwidth]{is-satellite-of_G.JPG}
-		\caption{is$\_$satellite$\_$(moon,earth) - Ground query.}
+		\caption{is$\_$satellite$\_$of(moon,earth) - Ground query.}
 	\end{figure}
 	
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.75\textwidth]{is-satellite-of_NG.JPG}
-		\caption{is$\_$satellite$\_$(L,jupiter) - Non-ground query.}
+		\caption{is$\_$satellite$\_$of(L,jupiter) - Non-ground query.}
 	\end{figure}
 	
-	
+`'
 	\item obtain$\_$all$\_$satellites(Planet , L) :- findall(X , is$\_$satellite$\_$of(X , Planet) , L).
-	
+		
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.75\textwidth]{obtain-all-satellites_G.JPG}
@@ -165,30 +166,30 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 \newpage
 \section*{Problem 4: Unordered structures}
 \begin{enumerate}
-	\item PLanguages would be a set containing all possible subsets of Languages, namely the powerset of languages
+	\item $\mathcal{P}Languages$ would be a set containing all possible subsets of Languages, namely the powerset of languages
 	\item 
 	\begin{enumerate}
-		\item Favorites is a non-atomic element, or a subset, of the powerset of the Languages set.
-		\item It should be interpreted as a set
-		\item Favorites can be the empty set, any subset of the power set of Languages, or Languages itself.
+		\item Favorites is of type $\mathcal{P}Languages$. This means that Favorites is a non-atomic element, or a subset, of the powerset of the Languages set.
+		\item It should be interpreted as a set.
+		\item Favorites can be the empty set, any subset of $\mathcal{P}Languages$, or Languages itself.
 	\end{enumerate}
 	\item
 	\begin{enumerate}
-		\item Favorites is equal to the entire powerset of the Languages set
-		\item Favorite is a single non-atomic element of the powerset of the Languages set. Not the entire powerset of Languages.
+		\item Favorites is equal to the entire powerset of the Languages set.
+		\item Favorite is a single non-atomic element of the powerset of the Languages set. Not the entire powerset of Languages. Therefore, it is not semantically equivalent.
 	\end{enumerate}
 	
-	\item No, because the element of the Language set $\{$Lua, Groovy, C$\}$ is not a set of sets and therefore cannot be a member of the powerset of the Language set.
-	Having the set $\{$Lua,Groovy,C$\}$ in the power set of Languages would imply that the atomic variable Lua, Groovy and C are contained within the Languages set, which is not the case for Lua.
+	\item Having the set $\{$Lua,Groovy,C$\}$ in the power set of Languages would imply that the atomic variables Lua, Groovy and C are contained within the Languages set, which is not the case for Lua.
+			This means that $ $\{$Lua,Groovy,C$\}$ \not\in \mathcal{P}Languages$.
 	
 	\item Yes, because $\{ \{$Lua,Groovy,C$\} \}$ is an element of the powerset of Languages where the superset only contains the element $\{$Lua,Groovy, C$\}$, and not the individual atomic variables.
 	\item
 	\begin{enumerate}
 		\item The variable can be either atomic or non-atomic, depending on what element of Languages it is assigned to. This is because Languages holds both atomic and non-atomic variables.
-		\item Non-Atomic. This variable represents a set of elements
+		\item Non-Atomic. This variable represents a set of elements, since every element in $\mathcal{P}Languages$ is a set.
 	\end{enumerate}	
-	\item Library: PLanguages
-	\item No, because the set containing the empty set (‘$\{ \{ \} \}$’) is not an element of the powerset but the empty set (‘$\{ \}$’) would be.
+	\item Library: $\mathcal{P}Languages$
+	\item No, because the set containing the empty set (‘$\{ \varnothing  \}$’) is not an element of the powerset but the empty set (‘$\{ \}$’ or '$\varnothing$') would be.
 	\item Refer to problem4-9.lsp in /code
 \end{enumerate}
 \section*{Problem 5: Ordered structures}
@@ -199,21 +200,21 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 		\hspace{0.5pt}\=
 		\\ % Adjust the width of the tab here
 		\>Enqueue(Q, T): \hspace{0.5pt}\=\\
-		\>\> cons(T , $\Sigma$1) \\
+		\>\> $\Sigma$1' = cons(T , $\Sigma$1) \\
 		\\
 		\>Dequeue(Q): \\
 		\>\> while $\Sigma$1 is not empty:\hspace{0.5pt}\= \\
-		\>\>\> cons(head($\Sigma$1) , $\Sigma$2) \\
-		\>\> $\Sigma$1’ = tail($\Sigma$1) \\
-		\>\> If $\Sigma$2 is empty: \\
-		\>\>\> return null \\
-		\>\> Else: \\
-		\>\>\> $\Sigma$1’ = $\Sigma$2 \\
-		\>\>\> $\Sigma$2 = cons(nil , $\langle \rangle$) \\
-		\>\>\> Return head($\Sigma$1)
+		\>\>\> $\Sigma$2' = cons(head($\Sigma$1) , $\Sigma$2) \\
+		\>\>\> $\Sigma$1’ = tail($\Sigma$1) \\
+		\>\> x = head($\Sigma$2) \\
+		\>\> while $\Sigma$2 is not empty:\hspace{0.5pt}\= \\
+		\>\>\> $\Sigma$1' = cons(head($\Sigma$2) , $\Sigma$1) \\
+		\>\>\> $\Sigma$2’ = tail($\Sigma$2) \\
+		\>\>Return x
 	\end{tabbing}
 	
 	\item Refer to file queue-adt.lsp in /code
+	\item Refer to file problem5-3.pl in /code
 \end{enumerate}
 \section*{Problem 6: Binary relations, functions and orderings}
 \subsection*{Part 1}
@@ -318,7 +319,7 @@ Card4: \\No need to flip this card since a yellow card doesn’t necessarily imp
 								= ⟨a, b ,c ,a⟩
 	\end{verbatim}
 	
-	\item Refer to file compress.lisp in /code
+	\item Refer to file compress.lsp in /code
 	
 \end{enumerate}
 
