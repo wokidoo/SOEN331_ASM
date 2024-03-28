@@ -6,6 +6,7 @@
     (SFO . (San_Francisco))
     (SDQ . (Santo Domingo))))
 
-(defvar monitored (mapcar 'car airports))
+(defun monitored (t_airports) 
+    (mapcar 'car t_airports))
 
-(print monitored)
+(print (monitored airports))
